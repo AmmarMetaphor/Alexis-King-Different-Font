@@ -1,7 +1,33 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-:root{--ink:#09090b;--paper:#f7f3eb;--white:#fff;--indigo:#4b318a;--indigo-deep:#281650;--teal:#168a92;--teal-bright:#54d5d2;--lavender:#a88af2;--line:rgba(9,9,11,.16);--line-dark:rgba(255,255,255,.18);--font-display:"Barlow Condensed","Arial Narrow",sans-serif;--font-body:"Inter",Arial,sans-serif;--container:1180px;--shadow:0 28px 70px rgba(9,9,11,.18);
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&display=swap');
+/*
+  Brand typography system (client brand guide, web priority):
+    1. The Seasons  -> --font-display    (headings / editorial display)
+    2. WindSong     -> --font-decorative (very selective short accents only)
+    3. Poppins      -> --font-body       (body copy, nav, buttons, forms, UI)
+
+  "The Seasons" and "WindSong" are licensed client fonts with no files in this
+  repo yet — see the @font-face comments below. Until those .woff2 files are
+  supplied, --font-display safely falls back to the already-loaded Barlow
+  Condensed (today's tested display face) so headings keep their current
+  size/spacing/line-height without overflow risk, and --font-decorative is
+  defined but not applied to any element, since its generic cursive fallback
+  would look broken rather than premium. Poppins is real today (self-hosted
+  below) and is live across all body/UI text.
+*/
+@font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/poppins/poppins-400.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/poppins/poppins-500.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/poppins/poppins-600.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/poppins/poppins-700.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:800;font-display:swap;src:url("/assets/fonts/poppins/poppins-800.woff2") format("woff2")}
+/*
+  Not shipped yet — drop the licensed files in and uncomment to activate:
+@font-face{font-family:"The Seasons";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/the-seasons/the-seasons-regular.woff2") format("woff2")}
+@font-face{font-family:"WindSong";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/windsong/windsong-regular.woff2") format("woff2")}
+*/
+:root{--ink:#09090b;--paper:#f7f3eb;--white:#fff;--indigo:#4b318a;--indigo-deep:#281650;--teal:#168a92;--teal-bright:#54d5d2;--lavender:#a88af2;--line:rgba(9,9,11,.16);--line-dark:rgba(255,255,255,.18);--font-display:"The Seasons","Barlow Condensed","Arial Narrow",sans-serif;--font-body:"Poppins",-apple-system,"Segoe UI",Arial,sans-serif;--font-decorative:"WindSong","Brush Script MT",cursive;--container:1180px;--shadow:0 28px 70px rgba(9,9,11,.18);
 --midnight:#0b1130;--electric-blue:#3b5bff;--cyan:#23d0e0;--lavender-blue:#8b93f5;--ice-blue:#e7f0ff;--lavender-ice:#eef0ff}
+.accent-decorative{font-family:var(--font-decorative);font-weight:400;text-transform:none;letter-spacing:0}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);line-height:1.55;overflow-x:hidden}body.modal-open{overflow:hidden}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}
 .skip-link{position:absolute;left:-9999px;top:0;background:#fff;padding:.75rem 1rem;z-index:999}.skip-link:focus{left:.75rem;top:.75rem}.container{width:min(var(--container),calc(100% - 48px));margin-inline:auto}.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:700}.display{font-family:var(--font-display);text-transform:uppercase;letter-spacing:-.025em;line-height:.88;margin:0}.display-lg{font-size:clamp(3.5rem,7vw,7.5rem)}.display-md{font-size:clamp(2.8rem,5vw,5.4rem)}.body-lg{font-size:clamp(1.05rem,1.5vw,1.35rem);max-width:66ch}.light-muted{color:rgba(255,255,255,.72)}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(247,243,235,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:box-shadow .25s ease}.site-header.is-scrolled{box-shadow:0 10px 28px rgba(9,9,11,.14)}.nav-wrap{min-height:84px;display:grid;grid-template-columns:220px 1fr;gap:2rem;align-items:center;transition:min-height .25s ease}.site-header.is-scrolled .nav-wrap{min-height:64px}.site-header.is-scrolled .brand img{max-height:36px}.brand{display:inline-flex;align-items:center;gap:.6rem}.brand img{max-height:46px;width:auto;transition:max-height .25s ease}.brand-fallback{font-family:var(--font-display);font-weight:800;font-size:1.4rem;text-transform:uppercase;letter-spacing:.01em}.nav-links{display:flex;align-items:center;justify-content:flex-end;gap:1.25rem;font-size:.86rem;font-weight:700}

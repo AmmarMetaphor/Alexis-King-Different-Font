@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&display=swap');
 /*
   Brand typography system (client brand guide, web priority):
     1. The Seasons  -> --font-display    (headings / editorial display)
@@ -14,7 +13,16 @@
   defined but not applied to any element, since its generic cursive fallback
   would look broken rather than premium. Poppins is real today (self-hosted
   below) and is live across all body/UI text.
+
+  Barlow Condensed was previously loaded from a Google Fonts @import; it is
+  now self-hosted for the same reason as Poppins (no third-party request
+  required for any font in the current system, and no dependency on the
+  viewer's network being able to reach fonts.googleapis.com).
 */
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/barlow-condensed/barlow-condensed-500.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/barlow-condensed/barlow-condensed-600.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:700;font-display:swap;src:url("/assets/fonts/barlow-condensed/barlow-condensed-700.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:800;font-display:swap;src:url("/assets/fonts/barlow-condensed/barlow-condensed-800.woff2") format("woff2")}
 @font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/poppins/poppins-400.woff2") format("woff2")}
 @font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url("/assets/fonts/poppins/poppins-500.woff2") format("woff2")}
 @font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url("/assets/fonts/poppins/poppins-600.woff2") format("woff2")}
